@@ -2,7 +2,7 @@
 import i18next from 'i18next';
 import zh from './zh.js';
 import en from './en.js';
-import zhTW from './zh-TW.js'; // 1. 匯入繁體中文語言檔
+import zhTW from './zhTW.js'; // 1. 匯入繁體中文語言檔
 import app from '../hono/hono';
 
 app.use('*', async (c, next) => {
@@ -25,11 +25,11 @@ const resources = {
 	zh: {
 		translation: zh,
 	},
-	'zh-TW': { // 3. 將繁體中文加入資源中
-		translation: zh-TW,
+	'zhTW': { // 3. 將繁體中文加入資源中
+		translation: zhTW,
 	},
 };
 
 i18next.init({
-	fallbackLng: 'zh-TW',
+	fallbackLng: 'zhTW',
 // ... existing code ...

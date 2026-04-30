@@ -1,4 +1,4 @@
-const zh-TW = {
+const zhTW = {
     inbox: '收件匣',
     drafts: '草稿',
     sent: '寄件備份',
@@ -327,4 +327,4 @@ const zh-TW = {
     userEmail: '信箱地址'
 }
 
-export default zh-TW
+export default zhTW

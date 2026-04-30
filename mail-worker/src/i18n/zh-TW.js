@@ -1,4 +1,4 @@
-const zh-TW = {
+const zhTW = {
 	IncorrectPwd: '密碼錯誤',
 	addAccountDisabled: '新增電子郵件地址功能已停用',
 	regDisabled: '註冊功能已停用',
@@ -102,4 +102,4 @@ const zh-TW = {
 	}
 };
 
-export default zh-TW;
+export default zhTW;

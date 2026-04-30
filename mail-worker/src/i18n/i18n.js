@@ -21,13 +21,13 @@ const resources = {
 	zh: {
 		translation: zh,
 	},
-	'zhTW': {
-		translation: zhTW,
+	'zh-TW': { // 語言代碼的 Key 必須要有連字號，瀏覽器才認得
+		translation: zhTW, // 這裡的值才是剛才匯入且沒有連字號的變數名稱
 	},
 };
 
 i18next.init({
-	fallbackLng: 'zhTW',
+	fallbackLng: 'zh-TW', // 後備語言代碼也必須要有連字號
 	resources,
 });
 

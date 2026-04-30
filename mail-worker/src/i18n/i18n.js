@@ -2,7 +2,7 @@
 import i18next from 'i18next';
 import zh from './zh.js';
 import en from './en.js';
-import zh-TW from './zh-TW.js'; // 1. 匯入繁體中文語言檔
+import zhTW from './zh-TW.js'; // 1. 匯入繁體中文語言檔
 import app from '../hono/hono';
 
 app.use('*', async (c, next) => {

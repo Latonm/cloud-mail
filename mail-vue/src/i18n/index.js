@@ -8,7 +8,7 @@ const i18n = createI18n({
     messages: {
         zh,
         en,
-        'zh-TW': zhTW // 2. 加入到 messages 資源物件中
+        'zhTW': zhTW // 2. 加入到 messages 資源物件中
     },
 });
 

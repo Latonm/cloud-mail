@@ -284,7 +284,7 @@ const zhTW = {
     noRecipientDesc: '即使未註冊電子郵件地址也能接收郵件',
     preview: '預覽',
     help: '說明',
-    document: '文件',
+    document: '文檔',
     clearEmail: '郵件清理',
     sendEmailAddress: '寄件者信箱',
     toEmail: '收件者信箱',

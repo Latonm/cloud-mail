@@ -3,8 +3,8 @@
     <h1 align="center">Cloud Mail</h1>
     <p align="center">基于 Cloudflare 的简约响应式邮箱服务，支持邮件发送、附件收发 🎉</p> 
     <p align="center">
-       <a href="/README-TW.md" style="margin-left: 5px">繁體中文</a> |
-        <a href="/README.md" style="margin-left: 5px">簡體中文</a> |
+       <a href="/README.md" style="margin-left: 5px">繁體中文</a> |
+        <a href="/README-zh.md" style="margin-left: 5px">簡體中文</a> |
         <a href="/README-en.md" style="margin-left: 5px">English</a>
     </p>
     <p align="center">

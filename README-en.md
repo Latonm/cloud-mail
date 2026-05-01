@@ -3,7 +3,9 @@
     <h1 align="center">Cloud Mail</h1>
     <p align="center">A simple, responsive email service designed to run on Cloudflare Workers 🎉</p> 
     <p align="center">
-       <a href="/README.md" style="margin-left: 5px">简体中文</a> | English 
+       <a href="/README-TW.md" style="margin-left: 5px">繁體中文</a> |
+        <a href="/README.md" style="margin-left: 5px">簡體中文</a> |
+        <a href="/README-en.md" style="margin-left: 5px">English</a>
     </p>
     <p align="center">
         <a href="https://github.com/maillab/cloud-mail/tree/main?tab=MIT-1-ov-file" target="_blank" >

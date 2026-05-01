@@ -3,8 +3,8 @@
     <h1 align="center">Cloud Mail</h1>
     <p align="center">一個簡單、響應式，專為在 Cloudflare Workers 上執行而設計的電子郵件服務 🎉</p> 
     <p align="center">
-       <a href="/README-TW.md" style="margin-left: 5px">繁體中文</a> |
-        <a href="/README.md" style="margin-left: 5px">簡體中文</a> |
+       <a href="/README.md" style="margin-left: 5px">繁體中文</a> |
+        <a href="/README-zh.md" style="margin-left: 5px">簡體中文</a> |
         <a href="/README-en.md" style="margin-left: 5px">English</a>
     </p>
     <p align="center">

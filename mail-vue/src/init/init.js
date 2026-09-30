@@ -15,12 +15,16 @@ export async function init() {
     const accountStore = useAccountStore();
 
     const token = localStorage.getItem('token');
-    if (!settingStore.lang) {
-        const browserLanguage = navigator.language.toLowerCase()
-        const lang = browserLanguage === 'zh-tw' || browserLanguage === 'zh-hk' || browserLanguage === 'zh-mo'
-            ? 'zh-tw'
-            : browserLanguage.startsWith('zh') ? 'zh' : 'en'
-        settingStore.lang = lang
+    const languageMigrationKey = 'cloud-mail-language-default-v1'
+    if (!localStorage.getItem(languageMigrationKey)) {
+        // Existing installs used Simplified Chinese as the implicit default.
+        // Convert that old default once, while keeping future explicit choices intact.
+        if (settingStore.lang === 'zh' || !settingStore.lang) {
+            settingStore.lang = 'zh-tw'
+        }
+        localStorage.setItem(languageMigrationKey, '1')
+    } else if (!settingStore.lang) {
+        settingStore.lang = 'zh-tw'
     }
 
     i18n.global.locale.value = settingStore.lang

@@ -1,12 +1,13 @@
 import dayjs from 'dayjs'
 import 'dayjs/locale/zh-cn'
+import 'dayjs/locale/zh-tw'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
 import {useSettingStore} from "@/store/setting.js";
 const settingStore = useSettingStore();
 dayjs.extend(utc)
 dayjs.extend(timezone)
-dayjs.locale(settingStore.lang === 'en' ? 'en' : 'zh-cn')
+dayjs.locale(settingStore.lang === 'en' ? 'en' : settingStore.lang === 'zh-tw' ? 'zh-tw' : 'zh-cn')
 const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 export function fromNow(date) {
@@ -37,9 +38,9 @@ export function fromNow(date) {
     } else {
 
         if (isToday) {
-            if (diffSeconds < 60) return `几秒前`;
-            if (diffMinutes < 60) return `${diffMinutes}分钟前`;
-            if (diffHours >= 1 && diffHours < 2) return '1小时前';
+            if (diffSeconds < 60) return settingStore.lang === 'zh-tw' ? '剛剛' : '几秒前';
+            if (diffMinutes < 60) return settingStore.lang === 'zh-tw' ? `${diffMinutes} 分鐘前` : `${diffMinutes}分钟前`;
+            if (diffHours >= 1 && diffHours < 2) return settingStore.lang === 'zh-tw' ? '1 小時前' : '1小时前';
             return d.format('HH:mm');
         }
         else if (now.subtract(1, 'day').isSame(d, 'day')) {
@@ -76,7 +77,9 @@ export function formatDetailDate(time) {
             ? d.format('ddd, MMM D, h:mm A')
             : d.format('ddd, MMM D, YYYY, h:mm A');
     } else {
-        return d.format('YYYY年M月D日 ddd AH:mm');
+        return settingStore.lang === 'zh-tw'
+            ? d.locale('zh-tw').format('YYYY年M月D日 ddd A h:mm')
+            : d.format('YYYY年M月D日 ddd AH:mm');
     }
 }
 
@@ -89,5 +92,5 @@ export function toUtc(time) {
 }
 
 export function setExtend(lang) {
-    dayjs.locale(lang)
+    dayjs.locale(lang === 'zh-tw' ? 'zh-tw' : lang === 'zh' ? 'zh-cn' : lang)
 }

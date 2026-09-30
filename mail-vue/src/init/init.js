@@ -16,12 +16,15 @@ export async function init() {
 
     const token = localStorage.getItem('token');
     if (!settingStore.lang) {
-        let lang = navigator.language.split('-')[0]
-        lang = lang === 'zh' ? lang : 'en'
+        const browserLanguage = navigator.language.toLowerCase()
+        const lang = browserLanguage === 'zh-tw' || browserLanguage === 'zh-hk' || browserLanguage === 'zh-mo'
+            ? 'zh-tw'
+            : browserLanguage.startsWith('zh') ? 'zh' : 'en'
         settingStore.lang = lang
     }
 
     i18n.global.locale.value = settingStore.lang
+    document.documentElement.lang = settingStore.lang === 'zh-tw' ? 'zh-TW' : settingStore.lang === 'zh' ? 'zh-CN' : 'en'
 
     let setting = null;
 
